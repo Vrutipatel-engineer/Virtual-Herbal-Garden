@@ -1,5 +1,11 @@
 # Virtual Herbal Garden — Final Implementation Plan
 
+## Implementation Progress
+
+- **Phase 0 — Complete:** Repository and tooling audit completed on 3 September 2026.
+- **Phase 1 — Complete:** Project foundation, design system, global layout, routing, structured plant data, image architecture, supporting datasets, and utilities implemented and verified.
+- **Next approved milestone:** Phase 2 — Landing Page, Plant Directory, Search, Categories, and Plant Cards.
+
 ## 1. Plan Status and Scope Guardrails
 
 This document is the approved start-to-finish implementation plan for the Virtual Herbal Garden.
