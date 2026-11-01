@@ -1,5 +1,6 @@
 import { Sky } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import type { ComponentRef } from "react";
 import { useMemo, useRef } from "react";
 import type { Fog, Mesh, Points, ShaderMaterial } from "three";
 import { Color, MathUtils, Vector3 } from "three";
@@ -39,7 +40,7 @@ export function GardenAtmosphere({
 }) {
   const backgroundRef = useRef<Color>(null);
   const fogRef = useRef<Fog>(null);
-  const skyRef = useRef<Mesh>(null);
+  const skyRef = useRef<ComponentRef<typeof Sky>>(null);
   const sunRef = useRef<Mesh>(null);
   const moonRef = useRef<Mesh>(null);
   const starsRef = useRef<Points>(null);
