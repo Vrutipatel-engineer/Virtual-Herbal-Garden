@@ -2,8 +2,10 @@ export interface PlantCategoryDefinition {
   id: string;
   label: string;
   description: string;
-  kind: "category" | "plantType";
+  kind: "category" | "plantType" | "curated";
   value: string;
+  /** Optional exact membership for discovery groups that span plant categories/types. */
+  plantIds?: string[];
 }
 
 export interface Region {
@@ -28,6 +30,21 @@ export interface EducationalResource {
   category: ResourceCategory;
   readingTime: number;
   featured: boolean;
+  sections: EducationalResourceSection[];
+}
+
+export interface EducationalResourceSection {
+  heading: string;
+  paragraphs: string[];
+}
+
+export interface DiscoveryPath {
+  id: string;
+  prompt: string;
+  title: string;
+  description: string;
+  filters: Record<string, string>;
+  accent: "leaf" | "earth" | "mist";
 }
 
 export type GardenLayer = "background" | "midground" | "foreground";

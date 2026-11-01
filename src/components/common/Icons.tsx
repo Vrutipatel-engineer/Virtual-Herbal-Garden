@@ -51,3 +51,58 @@ export const ArrowIcon = (props: IconProps) => (
     <path d="M5 12h14M13 6l6 6-6 6" />
   </svg>
 );
+
+export const SearchIcon = (props: IconProps) => (
+  <svg {...sharedProps} {...props}>
+    <circle cx="11" cy="11" r="6.5" />
+    <path d="m16 16 4.5 4.5" />
+  </svg>
+);
+
+export const HeartIcon = (props: IconProps) => (
+  <svg {...sharedProps} {...props}>
+    <path d="M20.8 5.8a5.4 5.4 0 0 0-7.7 0L12 6.9l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7L12 22l8.8-8.5a5.4 5.4 0 0 0 0-7.7Z" />
+  </svg>
+);
+
+export const MapPinIcon = (props: IconProps) => (
+  <svg {...sharedProps} {...props}>
+    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+    <circle cx="12" cy="10" r="2.5" />
+  </svg>
+);
+
+export const FilterIcon = (props: IconProps) => (
+  <svg {...sharedProps} {...props}>
+    <path d="M4 6h16M7 12h10M10 18h4" />
+  </svg>
+);
+
+export const BookIcon = (props: IconProps) => (
+  <svg {...sharedProps} {...props}>
+    <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5Z" />
+    <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5Z" />
+  </svg>
+);
+
+export const CompassIcon = (props: IconProps) => (
+  <svg {...sharedProps} {...props}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="m15.5 8.5-2 5-5 2 2-5 5-2Z" />
+  </svg>
+);
+
+export const SeedlingIcon = (props: IconProps) => (
+  <svg {...sharedProps} {...props}>
+    <path d="M12 22V10" />
+    <path d="M7.5 14C4 14 2 11.5 2 8c3.5 0 6 2 6 5.5" />
+    <path d="M12 10c0-4 2.7-6.5 7-6.5 0 4-2.5 6.5-7 6.5Z" />
+  </svg>
+);
+
+export const ShieldIcon = (props: IconProps) => (
+  <svg {...sharedProps} {...props}>
+    <path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z" />
+    <path d="m9 12 2 2 4-4" />
+  </svg>
+);

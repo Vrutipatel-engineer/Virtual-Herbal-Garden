@@ -115,6 +115,24 @@
   margin-left: auto;
 }
 
+.language-toggle {
+  min-height: 2.45rem;
+  padding-inline: 0.75rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-heading);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.language-toggle:hover,
+.language-toggle:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
 .mobile-nav {
   display: grid;
   max-height: 0;
@@ -369,6 +387,9 @@
 }
 
 .site-footer__links a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
   width: fit-content;
   color: var(--color-text-muted);
   font-size: var(--text-sm);

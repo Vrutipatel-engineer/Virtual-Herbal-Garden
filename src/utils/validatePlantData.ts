@@ -23,6 +23,13 @@ export const validatePlantData = (
   }
 
   for (const plant of items) {
+    if (!plant.story.origin.trim() || !plant.story.culturalContext.trim()) {
+      issues.push({
+        plantId: plant.id,
+        message: "Plant Story origin and cultural context are required.",
+      });
+    }
+
     if (!plant.image.alt.trim()) {
       issues.push({ plantId: plant.id, message: "Primary image needs alt text." });
     }

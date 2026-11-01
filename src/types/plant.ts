@@ -4,7 +4,8 @@ export type PlantCategory =
   | "Medicinal"
   | "Aromatic"
   | "Culinary"
-  | "Nutritive";
+  | "Nutritive"
+  | "Ecological";
 
 export type PlantType = "Tree" | "Shrub" | "Herb" | "Flower" | "Climber";
 
@@ -15,7 +16,10 @@ export type Habitat =
   | "Wetland"
   | "Home garden"
   | "Cultivated field"
-  | "Hillside";
+  | "Hillside"
+  | "Temperate woodland"
+  | "Woodland edge"
+  | "Orchard";
 
 export type Climate =
   | "Tropical"
@@ -37,12 +41,27 @@ export interface TraditionalUse {
   summary: string;
 }
 
+export interface GardenBenefit {
+  category: string;
+  summary: string;
+}
+
+export interface PlantReference {
+  label: string;
+  url: string;
+}
+
 export interface CultivationGuide {
   soil: string;
   water: string;
   sunlight: string;
   climate: string;
   propagation: string;
+}
+
+export interface PlantStoryContent {
+  origin: string;
+  culturalContext: string;
 }
 
 export interface Plant {
@@ -58,7 +77,12 @@ export interface Plant {
   habitat: Habitat[];
   climate: Climate[];
   description: string;
+  story: PlantStoryContent;
   traditionalUses: TraditionalUse[];
+  /** Landscape and wildlife value, separate from medicinal or traditional uses. */
+  gardenBenefits?: GardenBenefit[];
+  /** References for educational facts shown on the plant profile. */
+  references?: PlantReference[];
   characteristics: string[];
   cultivation: CultivationGuide;
   interestingFacts: string[];

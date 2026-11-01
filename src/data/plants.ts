@@ -1,5 +1,6 @@
 import { createPendingPlantImages } from "./mockImages";
 import type { Plant } from "../types/plant";
+import { forestTreePlants } from "./forestTreePlants";
 
 export const plants: Plant[] = [
   {
@@ -15,6 +16,10 @@ export const plants: Plant[] = [
     habitat: ["Home garden", "Cultivated field"],
     climate: ["Tropical", "Subtropical"],
     description: "An aromatic, branching herb widely grown near homes and temples, recognized by its fragrant leaves and deep cultural importance across India.",
+    story: {
+      origin: "Tulsi has been cultivated across the Indian subcontinent for generations, especially in courtyards and home gardens where it remains close to daily life.",
+      culturalContext: "Its place in domestic and ceremonial spaces reflects a relationship shaped by fragrance, routine, and cultural meaning—not only by utility.",
+    },
     traditionalUses: [
       { category: "Daily wellness", summary: "Leaves are documented in household infusions and seasonal wellness traditions." },
       { category: "Seasonal comfort", summary: "Traditional preparations often pair tulsi with warming culinary spices during cooler months." },
@@ -28,7 +33,7 @@ export const plants: Plant[] = [
       propagation: "Seeds or soft stem cuttings",
     },
     interestingFacts: ["Tulsi belongs to the same botanical family as mint and basil.", "Its leaf colour can range from bright green to deep purple depending on the variety."],
-    ...createPendingPlantImages("Tulsi"),
+    ...createPendingPlantImages("tulsi", "Tulsi"),
     relatedPlantIds: ["mint", "lemongrass", "ashwagandha"],
     featured: true,
   },
@@ -45,6 +50,10 @@ export const plants: Plant[] = [
     habitat: ["Dry woodland", "Home garden"],
     climate: ["Tropical", "Arid"],
     description: "A resilient evergreen to semi-evergreen tree whose spreading crown, compound leaves, and ability to handle seasonal dryness make it a familiar part of Indian landscapes.",
+    story: {
+      origin: "Native to the Indian subcontinent, neem is closely associated with warm plains and seasonally dry landscapes where mature trees become enduring landmarks.",
+      culturalContext: "Shade, resilience, and the long-recorded use of its different parts have made neem a familiar presence in community and household traditions.",
+    },
     traditionalUses: [
       { category: "Skin care", summary: "Leaves and seed oil appear in long-standing cleansing and personal-care traditions." },
       { category: "Hair care", summary: "Neem is included in some traditional scalp and hair-care preparations." },
@@ -58,7 +67,7 @@ export const plants: Plant[] = [
       propagation: "Fresh seed or young nursery plants",
     },
     interestingFacts: ["Neem can remain green through much of the dry season.", "Its broad canopy makes mature trees valuable sources of shade."],
-    ...createPendingPlantImages("Neem"),
+    ...createPendingPlantImages("neem", "Neem"),
     relatedPlantIds: ["amla", "moringa", "aloe-vera"],
     featured: true,
   },
@@ -75,6 +84,10 @@ export const plants: Plant[] = [
     habitat: ["Dry woodland", "Cultivated field"],
     climate: ["Subtropical", "Arid"],
     description: "A compact, drought-tolerant shrub with softly hairy leaves and orange-red berries enclosed by papery calyces.",
+    story: {
+      origin: "Ashwagandha is associated with dry parts of the Indian subcontinent, where its compact form and deep roots suit low-rainfall conditions.",
+      culturalContext: "Classical descriptions place the root within restorative traditions, while modern decisions about use still require appropriate professional guidance.",
+    },
     traditionalUses: [
       { category: "Daily wellness", summary: "The root is documented in classical and household wellness traditions; modern use should be discussed with a qualified professional." },
       { category: "Mindful living", summary: "Historical texts describe its place in restorative routines rather than as a substitute for medical care." },
@@ -88,7 +101,7 @@ export const plants: Plant[] = [
       propagation: "Seed sown in warm soil",
     },
     interestingFacts: ["It is a member of the nightshade family.", "The plant is naturally suited to relatively dry growing conditions."],
-    ...createPendingPlantImages("Ashwagandha"),
+    ...createPendingPlantImages("ashwagandha", "Ashwagandha"),
     relatedPlantIds: ["brahmi", "tulsi", "giloy"],
     featured: true,
   },
@@ -105,6 +118,10 @@ export const plants: Plant[] = [
     habitat: ["Home garden", "Dry woodland"],
     climate: ["Tropical", "Arid"],
     description: "A stemless succulent forming rosettes of thick, water-storing leaves with softly toothed margins.",
+    story: {
+      origin: "Aloe has travelled through warm regions for centuries and is now widely cultivated in Indian household gardens, particularly where dry conditions favour succulents.",
+      culturalContext: "Its clear inner gel became part of practical topical traditions, while the yellow latex layer is distinct and should not be confused with the gel.",
+    },
     traditionalUses: [
       { category: "Skin care", summary: "The clear inner leaf gel is widely documented in traditional topical skin-care practices." },
       { category: "Hair care", summary: "Fresh gel also appears in household hair and scalp preparations." },
@@ -118,7 +135,7 @@ export const plants: Plant[] = [
       propagation: "Offsets produced around the parent rosette",
     },
     interestingFacts: ["Its thick leaves store water for dry conditions.", "Aloe is botanically closer to lilies and asphodels than to cacti."],
-    ...createPendingPlantImages("Aloe Vera"),
+    ...createPendingPlantImages("aloe-vera", "Aloe Vera"),
     relatedPlantIds: ["neem", "hibiscus", "turmeric"],
     featured: false,
   },
@@ -135,6 +152,10 @@ export const plants: Plant[] = [
     habitat: ["Cultivated field", "Home garden"],
     climate: ["Tropical", "Humid"],
     description: "A lush rhizomatous herb with broad leaves, pale flower bracts, and a vivid golden underground stem central to Indian kitchens and ceremonies.",
+    story: {
+      origin: "Turmeric was domesticated in South and Southeast Asia and flourishes in warm, rain-fed cultivation across many Indian regions.",
+      culturalContext: "Its colour links everyday cooking with textiles, ceremony, and household traditions, giving one rhizome an unusually broad cultural presence.",
+    },
     traditionalUses: [
       { category: "Culinary tradition", summary: "The dried rhizome is a foundational spice and colouring ingredient in regional cuisines." },
       { category: "Skin care", summary: "Turmeric pastes have a documented place in ceremonial and household skin traditions." },
@@ -148,7 +169,7 @@ export const plants: Plant[] = [
       propagation: "Healthy pieces of rhizome with visible buds",
     },
     interestingFacts: ["The harvested spice is an underground stem rather than a root.", "Turmeric is closely related to ginger and cardamom."],
-    ...createPendingPlantImages("Turmeric"),
+    ...createPendingPlantImages("turmeric", "Turmeric"),
     relatedPlantIds: ["lemongrass", "mint", "aloe-vera"],
     featured: true,
   },
@@ -165,6 +186,10 @@ export const plants: Plant[] = [
     habitat: ["Wetland", "Home garden"],
     climate: ["Tropical", "Humid"],
     description: "A low, creeping wetland herb with small succulent leaves and delicate pale flowers, commonly found near water and in consistently damp soil.",
+    story: {
+      origin: "Brahmi grows naturally in wet ground and shallow-water margins across tropical regions, forming mats wherever moisture remains dependable.",
+      culturalContext: "Its association with learning and contemplative practice is preserved in traditional records and should be understood within that historical context.",
+    },
     traditionalUses: [
       { category: "Mindful living", summary: "Brahmi is recorded in traditional learning and contemplative routines; such use is educational context, not medical advice." },
       { category: "Hair care", summary: "It appears in some traditional infused oils used in scalp-care practices." },
@@ -178,7 +203,7 @@ export const plants: Plant[] = [
       propagation: "Stem cuttings or rooted divisions",
     },
     interestingFacts: ["Its succulent leaves help it tolerate periodically waterlogged habitats.", "Stems readily root where their nodes touch damp soil."],
-    ...createPendingPlantImages("Brahmi"),
+    ...createPendingPlantImages("brahmi", "Brahmi"),
     relatedPlantIds: ["ashwagandha", "tulsi", "mint"],
     featured: false,
   },
@@ -195,6 +220,10 @@ export const plants: Plant[] = [
     habitat: ["Dry woodland", "Cultivated field"],
     climate: ["Tropical", "Subtropical"],
     description: "A medium-sized deciduous tree with feathery-looking branchlets and round, pale green fruits known for their distinctly tart taste.",
+    story: {
+      origin: "Amla is native across parts of South and Southeast Asia and is found in both dry deciduous landscapes and deliberate orchard cultivation.",
+      culturalContext: "The sharply tart fruit moves easily between food, preservation, personal care, and seasonal customs in many regional traditions.",
+    },
     traditionalUses: [
       { category: "Culinary tradition", summary: "The fruit is preserved, pickled, candied, dried, and used in regional foods." },
       { category: "Hair care", summary: "Amla fruit is documented in traditional hair oils and cleansing preparations." },
@@ -208,7 +237,7 @@ export const plants: Plant[] = [
       propagation: "Seed for rootstocks; budding or grafting for selected cultivars",
     },
     interestingFacts: ["Its branchlets can resemble compound leaves from a distance.", "The fruit retains a firm texture even when mature."],
-    ...createPendingPlantImages("Amla"),
+    ...createPendingPlantImages("amla", "Amla"),
     relatedPlantIds: ["neem", "moringa", "hibiscus"],
     featured: true,
   },
@@ -225,6 +254,10 @@ export const plants: Plant[] = [
     habitat: ["Home garden", "Cultivated field", "Grassland"],
     climate: ["Tropical", "Humid"],
     description: "A tufted tropical grass with arching blades and a bright citrus aroma released when its leaves and stems are crushed.",
+    story: {
+      origin: "Lemongrass is rooted in tropical Asian cultivation, thriving where warmth, sun, and seasonal moisture support dense renewing clumps.",
+      culturalContext: "Its citrus fragrance connects kitchen gardens, warm infusions, and aromatic household practices without separating food from landscape.",
+    },
     traditionalUses: [
       { category: "Culinary tradition", summary: "Fresh stalks and leaves flavour teas, broths, and aromatic regional dishes." },
       { category: "Seasonal comfort", summary: "Warm lemongrass infusions are part of household seasonal routines in many communities." },
@@ -238,7 +271,7 @@ export const plants: Plant[] = [
       propagation: "Division of established clumps",
     },
     interestingFacts: ["Lemongrass is a true grass in the same family as rice and bamboo.", "Its fragrance is concentrated in natural aromatic oils."],
-    ...createPendingPlantImages("Lemongrass"),
+    ...createPendingPlantImages("lemongrass", "Lemongrass"),
     relatedPlantIds: ["mint", "tulsi", "turmeric"],
     featured: false,
   },
@@ -255,6 +288,10 @@ export const plants: Plant[] = [
     habitat: ["Home garden", "Cultivated field", "Wetland"],
     climate: ["Subtropical", "Temperate", "Humid"],
     description: "A fast-spreading aromatic herb with serrated leaves, square stems, and a cooling scent familiar in kitchens and home gardens.",
+    story: {
+      origin: "Field mint grows across temperate and subtropical parts of Asia, favouring moist soils and spreading quickly through underground runners.",
+      culturalContext: "Its refreshing character has secured a place in chutneys, drinks, seasonal infusions, and the sensory memory of home gardens.",
+    },
     traditionalUses: [
       { category: "Culinary tradition", summary: "Fresh leaves are used in chutneys, drinks, garnishes, and savoury dishes." },
       { category: "Seasonal comfort", summary: "Mint infusions are traditionally enjoyed for their refreshing aroma and flavour." },
@@ -268,7 +305,7 @@ export const plants: Plant[] = [
       propagation: "Rooted runners, division, or stem cuttings",
     },
     interestingFacts: ["Mint spreads vigorously through underground stems.", "Its square stems are a useful clue to its membership in the mint family."],
-    ...createPendingPlantImages("Mint"),
+    ...createPendingPlantImages("mint", "Mint"),
     relatedPlantIds: ["tulsi", "lemongrass", "brahmi"],
     featured: true,
   },
@@ -285,6 +322,10 @@ export const plants: Plant[] = [
     habitat: ["Tropical forest", "Dry woodland", "Home garden"],
     climate: ["Tropical", "Subtropical"],
     description: "A vigorous climbing plant with fleshy stems, aerial roots, and broadly heart-shaped leaves that often grows over trees and supports.",
+    story: {
+      origin: "Giloy is native to tropical parts of the Indian subcontinent and often climbs through hedges and woodland edges using nearby plants for support.",
+      culturalContext: "Traditional systems document its mature stems extensively, but cultural importance does not remove the need for careful identification and informed use.",
+    },
     traditionalUses: [
       { category: "Daily wellness", summary: "Stems are documented in several traditional wellness systems; safe use requires informed professional guidance." },
       { category: "Seasonal comfort", summary: "Historical household preparations place giloy within seasonal routines rather than as a replacement for treatment." },
@@ -298,7 +339,7 @@ export const plants: Plant[] = [
       propagation: "Mature stem cuttings trained onto a strong support",
     },
     interestingFacts: ["The species name cordifolia refers to its heart-shaped leaves.", "Older vines can develop rope-like stems and hanging aerial roots."],
-    ...createPendingPlantImages("Giloy"),
+    ...createPendingPlantImages("giloy", "Giloy"),
     relatedPlantIds: ["ashwagandha", "neem", "tulsi"],
     featured: false,
   },
@@ -309,12 +350,16 @@ export const plants: Plant[] = [
     scientificName: "Hibiscus rosa-sinensis",
     localNames: ["Gudhal", "Japa pushpa", "Chemparathi"],
     category: "Medicinal",
-    plantType: "Flower",
+    plantType: "Shrub",
     family: "Malvaceae",
     regions: ["pan-india", "western-ghats", "northeast-india"],
     habitat: ["Home garden", "Tropical forest"],
     climate: ["Tropical", "Humid"],
     description: "An evergreen flowering shrub grown for its glossy leaves and large, trumpet-shaped blooms in many colours.",
+    story: {
+      origin: "The exact wild origin of Hibiscus rosa-sinensis is uncertain, yet centuries of cultivation have made it deeply familiar across tropical Asia.",
+      culturalContext: "Its brief, vivid flowers connect ornament, offering, symbolism, and household hair-care traditions across different communities.",
+    },
     traditionalUses: [
       { category: "Hair care", summary: "Flowers and leaves are used in traditional hair oils, rinses, and plant-based cleansing preparations." },
       { category: "Culinary tradition", summary: "Certain hibiscus species are used in tart beverages; species identification is essential." },
@@ -328,7 +373,7 @@ export const plants: Plant[] = [
       propagation: "Semi-hardwood cuttings",
     },
     interestingFacts: ["Each bloom may last only a short time, but healthy plants flower repeatedly.", "The long central column combines the plant's reproductive structures into a striking form."],
-    ...createPendingPlantImages("Hibiscus"),
+    ...createPendingPlantImages("hibiscus", "Hibiscus"),
     relatedPlantIds: ["aloe-vera", "amla", "tulsi"],
     featured: true,
   },
@@ -345,6 +390,10 @@ export const plants: Plant[] = [
     habitat: ["Home garden", "Cultivated field", "Dry woodland"],
     climate: ["Tropical", "Arid"],
     description: "A fast-growing, drought-aware tree with airy compound leaves, cream-coloured flowers, and long hanging pods used in many regional cuisines.",
+    story: {
+      origin: "Moringa is considered native to the sub-Himalayan region of northwestern India and now grows widely throughout tropical landscapes.",
+      culturalContext: "Because leaves, flowers, and young pods enter everyday cooking, the tree is understood as both a garden plant and a source of food.",
+    },
     traditionalUses: [
       { category: "Culinary tradition", summary: "Leaves, flowers, and young pods are prepared as foods in many parts of India." },
       { category: "Daily wellness", summary: "Its food value has led to a broad place in household nourishment traditions." },
@@ -358,10 +407,11 @@ export const plants: Plant[] = [
       propagation: "Seed or large woody cuttings",
     },
     interestingFacts: ["Young pods are commonly called drumsticks because of their long shape.", "The open canopy allows filtered light to reach plants growing below."],
-    ...createPendingPlantImages("Moringa"),
+    ...createPendingPlantImages("moringa", "Moringa"),
     relatedPlantIds: ["amla", "neem", "turmeric"],
     featured: false,
   },
+  ...forestTreePlants,
 ];
 
 export const plantById = new Map(plants.map((plant) => [plant.id, plant]));

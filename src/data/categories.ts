@@ -2,6 +2,13 @@ import type { PlantCategoryDefinition } from "../types/content";
 
 export const plantCategories: PlantCategoryDefinition[] = [
   {
+    id: "ecological",
+    label: "Ecological",
+    description: "Plants and trees valued for habitat, food webs, shade, and landscape roles.",
+    kind: "category",
+    value: "Ecological",
+  },
+  {
     id: "medicinal",
     label: "Medicinal",
     description: "Plants documented in traditional wellness practices.",
@@ -18,9 +25,10 @@ export const plantCategories: PlantCategoryDefinition[] = [
   {
     id: "herbal",
     label: "Herbal",
-    description: "Everyday herbs with cultural, culinary, and garden value.",
-    kind: "plantType",
-    value: "Herb",
+    description: "Plants valued in Indian home herbal, food, and garden traditions.",
+    kind: "curated",
+    value: "herbal",
+    plantIds: ["tulsi", "neem", "aloe-vera", "turmeric", "moringa", "hibiscus"],
   },
   {
     id: "trees",
@@ -47,7 +55,8 @@ export const plantCategories: PlantCategoryDefinition[] = [
     id: "flowers",
     label: "Flowers",
     description: "Flowering species known for beauty and cultural significance.",
-    kind: "plantType",
-    value: "Flower",
+    kind: "curated",
+    value: "flowers",
+    plantIds: ["hibiscus", "tulsi"],
   },
 ];

@@ -3,23 +3,30 @@ import { ThemeContext, type Theme } from "./themeContext";
 
 const storageKey = "verdant-theme";
 
-const getInitialTheme = (): Theme => {
-  if (typeof window === "undefined") return "light";
+const getInitialTheme = (): { theme: Theme; userChoice: boolean } => {
+  if (typeof window === "undefined") return { theme: "light", userChoice: false };
 
+  let storedTheme: string | null = null;
   try {
-    const storedTheme = window.localStorage.getItem(storageKey);
-    if (storedTheme === "light" || storedTheme === "dark") return storedTheme;
+    storedTheme = window.localStorage.getItem(storageKey);
   } catch {
     // Storage can be unavailable in privacy-restricted browser contexts.
   }
 
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  if (storedTheme === "light" || storedTheme === "dark") {
+    return { theme: storedTheme, userChoice: true };
+  }
+
+  return {
+    theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
+    userChoice: false,
+  };
 };
 
 export function ThemeProvider({ children }: PropsWithChildren) {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [initialTheme] = useState(getInitialTheme);
+  const [theme, setTheme] = useState<Theme>(initialTheme.theme);
+  const [hasUserChoice, setHasUserChoice] = useState(initialTheme.userChoice);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -30,23 +37,33 @@ export function ThemeProvider({ children }: PropsWithChildren) {
     );
     themeColor?.setAttribute(
       "content",
-      theme === "dark" ? "#101a16" : "#f4f1e8",
+      theme === "dark" ? "#101a16" : "#f5f2e9",
     );
 
-    try {
-      window.localStorage.setItem(storageKey, theme);
-    } catch {
-      // The visual theme still works when persistence is unavailable.
-    }
   }, [theme]);
+
+  useEffect(() => {
+    if (hasUserChoice) return;
+
+    const preference = window.matchMedia("(prefers-color-scheme: dark)");
+    const syncPreference = () => setTheme(preference.matches ? "dark" : "light");
+    preference.addEventListener("change", syncPreference);
+    return () => preference.removeEventListener("change", syncPreference);
+  }, [hasUserChoice]);
 
   const value = useMemo(
     () => ({
       theme,
-      toggleTheme: () =>
-        setTheme((currentTheme) =>
-          currentTheme === "light" ? "dark" : "light",
-        ),
+      toggleTheme: () => {
+        const nextTheme = theme === "light" ? "dark" : "light";
+        setHasUserChoice(true);
+        setTheme(nextTheme);
+        try {
+          window.localStorage.setItem(storageKey, nextTheme);
+        } catch {
+          // The visual theme still works when persistence is unavailable.
+        }
+      },
     }),
     [theme],
   );

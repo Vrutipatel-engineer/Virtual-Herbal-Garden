@@ -26,6 +26,22 @@ body {
     color var(--duration-normal) var(--ease-standard);
 }
 
+.site-header,
+.site-footer,
+.plant-card,
+.search-bar,
+.directory-sidebar,
+.resource-card,
+.state-panel,
+.hero__frame,
+.icon-button {
+  transition:
+    background-color var(--duration-normal) var(--ease-standard),
+    border-color var(--duration-normal) var(--ease-standard),
+    color var(--duration-normal) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard);
+}
+
 button,
 input,
 select,
@@ -118,6 +134,17 @@ h3 {
   margin-inline: auto;
 }
 
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 .eyebrow {
   margin-bottom: var(--space-4);
   color: var(--color-primary);
@@ -162,6 +189,13 @@ h3 {
   transform: translateY(0);
 }
 
+.button:focus-visible,
+.text-button:focus-visible,
+.text-link:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
 .button--primary {
   background: var(--color-primary-strong);
   color: var(--color-on-primary);
@@ -180,6 +214,48 @@ h3 {
 .button--secondary:hover {
   border-color: var(--color-primary);
   background: var(--color-primary-soft);
+}
+
+.button--light {
+  background: #f1f0e7;
+  color: #183023;
+}
+
+.button--light:hover {
+  background: #ffffff;
+}
+
+.button--ghost-light {
+  border-color: rgb(255 255 255 / 34%);
+  color: #f1f0e7;
+}
+
+.button--ghost-light:hover {
+  border-color: rgb(255 255 255 / 70%);
+  background: rgb(255 255 255 / 9%);
+}
+
+.text-link,
+.text-button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.25rem;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text-link svg {
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.text-link:hover svg {
+  transform: translateX(0.2rem);
 }
 
 .icon-button {
@@ -212,5 +288,10 @@ h3 {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .reveal-ready:not(.reveal-visible) {
+    opacity: 1;
+    transform: none;
   }
 }

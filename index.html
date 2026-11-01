@@ -7,22 +7,29 @@
       name="description"
       content="Explore medicinal and herbal plants through a calm, interactive digital botanical garden."
     />
-    <meta name="theme-color" content="#f4f1e8" />
+    <meta name="theme-color" content="#f5f2e9" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Verdant — Virtual Herbal Garden</title>
     <script>
       (() => {
+        let storedTheme = null;
         try {
-          const storedTheme = localStorage.getItem("verdant-theme");
-          const theme =
-            storedTheme === "light" || storedTheme === "dark"
-              ? storedTheme
-              : window.matchMedia("(prefers-color-scheme: dark)").matches
-                ? "dark"
-                : "light";
-          document.documentElement.dataset.theme = theme;
+          storedTheme = localStorage.getItem("verdant-theme");
         } catch {
-          document.documentElement.dataset.theme = "light";
+          // Fall back to the system preference when storage is unavailable.
         }
+        const theme =
+          storedTheme === "light" || storedTheme === "dark"
+            ? storedTheme
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.querySelector('meta[name="theme-color"]')?.setAttribute(
+          "content",
+          theme === "dark" ? "#101a16" : "#f5f2e9",
+        );
       })();
     </script>
   </head>

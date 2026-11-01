@@ -43,4 +43,11 @@ export const regions: Region[] = [
     description: "Plateau landscapes where herbs, shrubs, and crops adapt to seasonal heat and rain.",
     climateNote: "Semi-arid to tropical conditions depending on elevation and monsoon exposure.",
   },
+  {
+    id: "temperate-woodlands",
+    name: "Temperate Woodlands",
+    eyebrow: "Seasonal tree habitats",
+    description: "A virtual grouping of temperate tree forms selected for their food, shade, and wildlife-supporting roles.",
+    climateNote: "These example species favour seasonal temperate conditions; local suitability varies by species and cultivar.",
+  },
 ];

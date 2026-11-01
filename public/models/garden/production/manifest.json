@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "source": "project-generated scene with vetted free materials",
+  "assetDecisionStatus": "CC0 environment source selected; botanical-model selection in progress",
+  "thirdPartySources": [
+    {
+      "name": "Poly Haven Forest Ground 01",
+      "license": "CC0",
+      "sourceUrl": "https://polyhaven.com/a/forrest_ground_01",
+      "use": "terrain PBR material source maps"
+    }
+  ],
+  "coordinateSystem": "Blender Z-up; GLB export Y-up",
+  "files": [
+    {
+      "path": "assets-3d/exports/terrain-pbr-v2.glb",
+      "role": "terrain",
+      "bytes": 9475228,
+      "sha256": "c34b5df0706517ba11002148ac6167eec197544b804d56970d6577ed25d84efe"
+    },
+    {
+      "path": "assets-3d/exports/pathways.glb",
+      "role": "pathways",
+      "bytes": 44708,
+      "sha256": "2172619638d6bb45cae4483c5c4f6df61dfb6b5c9a8ea4e5f7bdb8eeb07de5b6"
+    },
+    {
+      "path": "assets-3d/exports/environment.glb",
+      "role": "environment",
+      "bytes": 207236,
+      "sha256": "8e8658eafed8b517db2e1c907844331cd01001747a07d271599d01c6cf5a130e"
+    },
+    {
+      "path": "assets-3d/exports/colliders.glb",
+      "role": "colliders",
+      "bytes": 22740,
+      "sha256": "a6d47d620dc9486fa722849b5db890bcc4ea771a8826055472b28f292fb872ad"
+    },
+    {
+      "path": "assets-3d/exports/plants/tulsi.glb",
+      "role": "plant",
+      "bytes": 97316,
+      "sha256": "7197e5aec97776a338c0f2923e76ad7d3811f80524bbc4002b1d37c1fff4c88c"
+    },
+    {
+      "path": "assets-3d/exports/plants/tulsi-lod1.glb",
+      "role": "plant",
+      "bytes": 30144,
+      "sha256": "87a82eb56e2408f4bca76b39926c6076ff63a242d59202d5ee80fc206609c375"
+    },
+    {
+      "path": "assets-3d/exports/plants/aloe-vera.glb",
+      "role": "plant",
+      "bytes": 26040,
+      "sha256": "b9e9e5b6d6392b19a008c901068d4b01ba1773c8377abfc93cd3c5428136340f"
+    },
+    {
+      "path": "assets-3d/exports/plants/aloe-vera-lod1.glb",
+      "role": "plant",
+      "bytes": 12916,
+      "sha256": "b2bc963fe13ade1fa1125959b901d3ec196ba963d37110a3b1c55d95f5575569"
+    },
+    {
+      "path": "assets-3d/exports/plants/hibiscus.glb",
+      "role": "plant",
+      "bytes": 131404,
+      "sha256": "ac5e1648e7d7144d7e1d8859d3deff75eb5c776db1741d4416cacb4b88534a37"
+    },
+    {
+      "path": "assets-3d/exports/plants/hibiscus-lod1.glb",
+      "role": "plant",
+      "bytes": 46164,
+      "sha256": "869db1ff46ed4d3199dcaf9d4694e532974fe19eb4222baabe42d5bdbc56da1d"
+    }
+  ]
+}
