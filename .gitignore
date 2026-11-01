@@ -8,7 +8,6 @@ artifacts/
 .DS_Store
 Thumbs.db
 
-# High-resolution originals exceed GitHub's per-file upload limit.
-# Optimized runtime GLBs remain available under public/models/.
-assets-3d/source/third-party/aloe-vera-source-v1.glb
-assets-3d/source/third-party/neem-tree-source-v1.glb
+# Blender projects, source models, and offline asset pipeline files are not
+# required by the website runtime. Runtime GLBs remain in public/models/.
+assets-3d/
