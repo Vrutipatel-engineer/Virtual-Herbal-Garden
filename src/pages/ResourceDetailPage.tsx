@@ -25,7 +25,7 @@ export function ResourceDetailPage() {
 
   return (
     <article className="resource-detail">
-      <header className="resource-detail__hero">
+      <header className="resource-detail__hero" data-reveal>
         <div className="container">
           <nav className="breadcrumbs" aria-label={t("Breadcrumb")}>
             <Link to="/">{t("Home")}</Link>
@@ -43,7 +43,7 @@ export function ResourceDetailPage() {
       <div className="container resource-detail__layout">
         <div className="resource-detail__chapters">
           {resource.sections.map((section, index) => (
-            <section className="resource-detail__chapter" key={section.heading} aria-labelledby={`resource-section-${index}`}>
+            <section className="resource-detail__chapter" key={section.heading} aria-labelledby={`resource-section-${index}`} data-reveal>
               <span className="resource-detail__chapter-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
               <div>
                 <h2 id={`resource-section-${index}`}>{t(section.heading)}</h2>
@@ -51,7 +51,7 @@ export function ResourceDetailPage() {
               </div>
             </section>
           ))}
-          <aside className="resource-detail__note">
+          <aside className="resource-detail__note" data-reveal>
             <p className="eyebrow">{t("A note on responsible learning")}</p>
             <p>{t("These guides are for general education. They are not medical, diagnostic, or treatment advice. Consult qualified professionals for health or plant-identification questions.")}</p>
           </aside>

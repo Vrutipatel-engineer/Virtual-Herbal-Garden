@@ -15,7 +15,7 @@ export function StatisticsSection({ statistics }: StatisticsSectionProps) {
   ];
 
   return (
-    <section className="statistics-section" aria-labelledby="statistics-title">
+    <section className="statistics-section" aria-labelledby="statistics-title" data-reveal>
       <div className="container statistics-section__inner">
         <div className="statistics-section__intro">
           <p className="eyebrow">{t("The collection at a glance")}</p>

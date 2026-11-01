@@ -26,7 +26,7 @@ export function MyGardenPage() {
       </PageIntro>
 
       {savedCount > 0 ? (
-        <section className="my-garden-collection container" aria-labelledby="my-garden-heading">
+        <section className="my-garden-collection container" aria-labelledby="my-garden-heading" data-reveal>
           <div className="my-garden-collection__heading">
             <div>
               <p className="eyebrow">{t("Saved plants")}</p>

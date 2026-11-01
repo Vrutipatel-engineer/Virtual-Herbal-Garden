@@ -23,6 +23,7 @@ export function CategoryCard({ category, index }: CategoryCardProps) {
       className="category-card"
       to={`/plants?${parameter}=${encodeURIComponent(value)}`}
       style={{ "--category-index": index } as CSSProperties}
+      data-reveal
     >
       <span className="category-card__number" aria-hidden="true">
         {String(index + 1).padStart(2, "0")}

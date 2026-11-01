@@ -21,6 +21,7 @@ export function RegionCard({ region, plants, selected }: RegionCardProps) {
       className={`region-card${selected ? " region-card--selected" : ""}`}
       to={`/regions?region=${region.id}#selected-region`}
       aria-current={selected ? "true" : undefined}
+      data-reveal
     >
       {representativePlant ? (
         <PlantImage

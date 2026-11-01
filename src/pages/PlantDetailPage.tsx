@@ -32,7 +32,7 @@ export function PlantDetailPage() {
       <PlantHero plant={plant} />
       <QuickFacts plant={plant} />
 
-      <section className="plant-overview" aria-labelledby="plant-overview-title">
+      <section className="plant-overview" aria-labelledby="plant-overview-title" data-reveal>
         <div className="container plant-overview__grid">
           <div>
             <p className="eyebrow">{t("Overview")}</p>

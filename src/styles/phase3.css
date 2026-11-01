@@ -611,6 +611,73 @@
   font-size: var(--text-lg);
 }
 
+.regions-hero__feature {
+  display: grid;
+  gap: var(--space-4);
+  align-self: end;
+}
+
+.regions-hero__feature > p {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+.regions-hero__visual {
+  position: relative;
+  min-height: clamp(13rem, 24vw, 19rem);
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-image-matte);
+  box-shadow: var(--shadow-md);
+}
+
+.regions-hero__image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+.regions-hero__visual figcaption {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  left: var(--space-3);
+  display: grid;
+  gap: 0.15rem;
+  padding: var(--space-3) var(--space-4);
+  background: rgb(10 26 18 / 82%);
+  color: #f6f3e9;
+}
+
+.regions-hero__credit {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: var(--space-1);
+  color: #cbd8ca;
+  font-size: 0.62rem;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.regions-hero__credit:hover {
+  text-decoration: underline;
+}
+
+.regions-hero__visual figcaption span {
+  color: #cbd8ca;
+  font-size: var(--text-xs);
+}
+
+.regions-hero__visual figcaption strong {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
 .region-browser {
   background: var(--color-surface);
 }

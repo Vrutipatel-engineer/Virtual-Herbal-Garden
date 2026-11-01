@@ -31,7 +31,7 @@ export function PlantHero({ plant }: PlantHeroProps) {
         </nav>
 
         <div className="plant-hero__grid">
-          <div className="plant-hero__media">
+          <div className="plant-hero__media" data-reveal>
             <PlantImage
               image={getPlantImage(plant, "hero")}
               plantName={t(plant.commonName)}
@@ -48,7 +48,7 @@ export function PlantHero({ plant }: PlantHeroProps) {
             </p>
           </div>
 
-          <div className="plant-hero__content">
+          <div className="plant-hero__content" data-reveal>
             <div className="plant-hero__labels">
               <span>{t(plant.category)}</span>
               <span>{t(plant.plantType)}</span>

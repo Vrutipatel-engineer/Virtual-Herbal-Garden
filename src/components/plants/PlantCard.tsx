@@ -19,7 +19,7 @@ export function PlantCard({ plant, priority = false }: PlantCardProps) {
   const primaryRegion = regionNameById.get(plant.regions[0]) ?? plant.regions[0];
 
   return (
-    <article className="plant-card">
+    <article className="plant-card" data-reveal>
       <div className="plant-card__media">
         <Link to={`/plants/${plant.slug}`} aria-label={`${t("Explore plants")}: ${t(plant.commonName)}`}>
           <PlantImage

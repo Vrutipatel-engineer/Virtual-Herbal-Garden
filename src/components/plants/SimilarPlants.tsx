@@ -16,7 +16,7 @@ export function SimilarPlants({ plant }: SimilarPlantsProps) {
   const recommendations = getSimilarPlants(plant, plants, 3);
 
   return (
-    <section className="section similar-plants" aria-labelledby="similar-plants-title">
+    <section className="section similar-plants" aria-labelledby="similar-plants-title" data-reveal>
       <div className="container">
         <SectionHeading
           id="similar-plants-title"

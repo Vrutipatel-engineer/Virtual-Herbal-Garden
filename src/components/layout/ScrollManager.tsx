@@ -20,6 +20,8 @@ export function ScrollManager() {
   }, [pathname, search, hash]);
 
   useEffect(() => {
+    if (pathname === "/garden") return;
+
     const root = document.getElementById("main-content");
     if (!root) return;
 
@@ -47,13 +49,6 @@ export function ScrollManager() {
       elements.forEach((element) => {
         if (element.classList.contains("reveal-ready") || element.classList.contains("reveal-visible")) return;
         if (!revealObserver) {
-          element.classList.add("reveal-visible");
-          return;
-        }
-
-        const bounds = element.getBoundingClientRect();
-        const isInitiallyVisible = bounds.bottom > 0 && bounds.top < window.innerHeight;
-        if (isInitiallyVisible) {
           element.classList.add("reveal-visible");
           return;
         }

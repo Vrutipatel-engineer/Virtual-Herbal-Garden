@@ -25,7 +25,7 @@ export function QuickFacts({ plant }: QuickFactsProps) {
   ];
 
   return (
-    <section className="quick-facts" aria-labelledby="quick-facts-title">
+    <section className="quick-facts" aria-labelledby="quick-facts-title" data-reveal>
       <div className="container quick-facts__inner">
         <div className="quick-facts__heading">
           <p className="eyebrow">{t("At a glance")}</p>

@@ -6,6 +6,8 @@ import { RegionCard } from "../components/regions/RegionCard";
 import { plants } from "../data/plants";
 import { regions } from "../data/regions";
 import { useLanguage } from "../context/useLanguage";
+import { PlantImage } from "../components/plants/PlantImage";
+import { getPlantImage } from "../utils/plantImages";
 
 export function RegionsPage() {
   const { t } = useLanguage();
@@ -16,20 +18,51 @@ export function RegionsPage() {
   const selectedPlants = plants.filter((plant) =>
     plant.regions.includes(selectedRegion.id),
   );
+  const regionalPlant =
+    selectedPlants.find((plant) => getPlantImage(plant, "hero").src?.startsWith("/images/plants/")) ??
+    selectedPlants.find((plant) => plant.featured) ??
+    selectedPlants[0];
+  const regionalImage = regionalPlant ? getPlantImage(regionalPlant, "hero") : undefined;
 
   return (
     <>
       <header className="regions-hero" aria-labelledby="regions-title">
         <div className="container regions-hero__grid">
-          <div>
+          <div className="regions-hero__copy" data-reveal>
             <p className="eyebrow">{t("Explore by region")}</p>
             <h1 id="regions-title">{t("Every landscape grows a different story.")}</h1>
           </div>
-          <p>{t("Travel through Indian ecological regions and see how rain, altitude, heat, soil, and cultivation shape the plants represented in this garden.")}</p>
+          <div className="regions-hero__feature" data-reveal>
+            <p>{t("Travel through Indian ecological regions and see how rain, altitude, heat, soil, and cultivation shape the plants represented in this garden.")}</p>
+            {regionalPlant && regionalImage ? (
+              <figure className="regions-hero__visual">
+                <PlantImage
+                  image={regionalImage}
+                  plantName={t(regionalPlant.commonName)}
+                  className="regions-hero__image"
+                  priority
+                  sizes="(max-width: 64rem) 100vw, 38vw"
+                />
+                <figcaption>
+                  <span>{t("Currently exploring")}: {t(selectedRegion.name)}</span>
+                  <strong>{t(regionalPlant.commonName)}</strong>
+                  <a
+                    className="regions-hero__credit"
+                    href={regionalImage.sourceId ?? "#"}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${t("Image credit")}: ${(regionalImage.credit ?? "").replace("Photo:", t("Photo:"))}; ${t("view original source")}`}
+                  >
+                    {(regionalImage.credit ?? "").replace("Photo:", t("Photo:"))}
+                  </a>
+                </figcaption>
+              </figure>
+            ) : null}
+          </div>
         </div>
       </header>
 
-      <section className="section region-browser" aria-labelledby="region-browser-title">
+      <section className="section region-browser" aria-labelledby="region-browser-title" data-reveal>
         <div className="container">
           <SectionHeading
             id="region-browser-title"
@@ -52,7 +85,7 @@ export function RegionsPage() {
 
       <section id="selected-region" className="selected-region" aria-labelledby="selected-region-title">
         <div className="container">
-          <div className="selected-region__header">
+          <div className="selected-region__header" data-reveal>
             <div>
               <p className="eyebrow">{t("Currently exploring")}</p>
               <div className="selected-region__title-row">
@@ -65,7 +98,7 @@ export function RegionsPage() {
             </Link>
           </div>
 
-          <div className="selected-region__context">
+          <div className="selected-region__context" data-reveal>
             <p>{t(selectedRegion.description)}</p>
             <dl>
               <div>

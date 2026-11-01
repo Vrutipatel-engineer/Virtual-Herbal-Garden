@@ -211,7 +211,7 @@ export function PlantsPage() {
 
   return (
     <>
-      <section className="directory-hero" aria-labelledby="directory-title">
+      <section className="directory-hero" aria-labelledby="directory-title" data-reveal>
         <div className="container directory-hero__inner">
           <div className="directory-hero__copy">
           <p className="eyebrow">{t("Plant directory")}</p>
@@ -226,7 +226,7 @@ export function PlantsPage() {
         </div>
       </section>
 
-      <section id="directory-results" className="directory" aria-label={t("Plant directory")}>
+      <section id="directory-results" className="directory" aria-label={t("Plant directory")} data-reveal>
         <div className="container">
           <div className="directory-toolbar">
             <button

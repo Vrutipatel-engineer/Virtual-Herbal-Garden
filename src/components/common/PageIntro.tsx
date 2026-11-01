@@ -16,7 +16,7 @@ export function PageIntro({
 }: PageIntroProps) {
   const { t } = useLanguage();
   return (
-    <section className="page-intro" aria-labelledby="page-title">
+    <section className="page-intro" aria-labelledby="page-title" data-reveal>
       <div className="container page-intro__inner">
         <p className="eyebrow">{t(eyebrow)}</p>
         <h1 id="page-title">{t(title)}</h1>
